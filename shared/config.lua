@@ -1,7 +1,7 @@
 Config = {}
 
-Config.Framework = 'qb' -- supports 'qb' or 'esx'
-Config.Notify = 'qb' -- supports 'qb', 'esx', 'ox' (if using ox enable @ox_lib/init.lua in the manifest)
+Config.Framework = 'esx' -- supports 'qb' or 'esx'
+Config.Notify = 'ox' -- supports 'qb', 'esx', 'ox' (if using ox enable @ox_lib/init.lua in the manifest)
 Config.Target = 'qb' -- only 'qb' for now
 
 Config.ItemPlacementModeRadius = 10.0 -- Object can only be placed within this radius of the player
@@ -70,7 +70,7 @@ local pushAndSitTargetOptions = {
     {
         event = "wp-placeables:client:pushObject",
         icon = "fas fa-shopping-cart",
-        label = "Push object",
+        label = "Gegenstand schieben",
         animationPushOptions = {
             offset = {x =  -0.4, y = -1.7, z = -0.3},
             rotation = {x = 0.0, y = 0.0, z = 180.0},
@@ -81,7 +81,7 @@ local pushAndSitTargetOptions = {
     {
         event = "wp-placeables:client:sitOnObject",
         icon = "fas fa-chair",
-        label = "Sit on object",
+        label = "Sich hinsetzen",
         animationSitOptions = {
             offset = {x = 0.0, y = 0.15, z = 0.85},
             rotation = {x = 0.0, y = 10.0, z = 175.0},
@@ -95,7 +95,7 @@ local pushTargetOptions = {
     {
         event = "wp-placeables:client:pushObject",
         icon = "fas fa-shopping-cart",
-        label = "Push cart",
+        label = "Schiebewagen",
         animationPushOptions = {
             offset = {x =  -0.4, y = -1.7, z = -0.3},
             rotation = {x = 0.0, y = 0.0, z = 180.0},
@@ -111,7 +111,7 @@ local chairCustomTargetOptions = {
     {
         event = "qb-sit:sit",
         icon = "fas fa-chair",
-        label = "Sit down",
+        label = "Hinsetzen",
     },
 }
 
@@ -125,13 +125,13 @@ local chairCustomTargetOptions = {
 -- }
 
 -- Uncomment this line if you are using wp-printer
--- local printerCustomTargetOptions = {
---     {
---         event = "wp-printer:client:UsePrinter",
---         icon = "fas fa-print",
---         label = "Use printer",
---     },
--- }
+local printerCustomTargetOptions = {
+    {
+        event = "wp-printer:client:UsePrinter",
+        icon = "fas fa-print",
+        label = "Drucker verwenden",
+    },
+}
 
 -- Add the props you want to be placeable here
 -- Every prop will have the "pickup" target option added by default (to override use customPickupEvent)
@@ -449,11 +449,11 @@ Config.PlaceableProps = {
 
     -- Printers
     -- Uncomment this line if you are using wp-printer
-    -- {item = "printer", label = "Printer", model = "prop_printer_01", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "printer2", label = "Printer", model = "prop_printer_02", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "printer3", label = "Printer", model = "v_res_printer", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "printer4", label = "Printer", model = "v_ret_gc_print", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-    -- {item = "photocopier", label = "Photocopier", model = "v_med_cor_photocopy", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer", label = "Printer", model = "prop_printer_01", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer2", label = "Printer", model = "prop_printer_02", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer3", label = "Printer", model = "v_res_printer", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer4", label = "Printer", model = "v_ret_gc_print", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "photocopier", label = "Photocopier", model = "v_med_cor_photocopy", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
     
     -- ADD YOUR CUSTOM PROPS HERE
 }
