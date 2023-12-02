@@ -159,7 +159,7 @@ local function startItemPlacementMode(item)
 
             -- Display the controls
             Draw2DText('[E] Platzieren\n[Shift+E] Auf den Boden platzieren\n[Scroll Up/Down] Rotieren\n[Shift+Scroll Up/Down] Heben/Senken', 4, {255, 255, 255}, 0.4, 0.85, 0.85)
-            Draw2DText('[Right Click / Backspace] Modus verlasse ', 4, {255, 255, 255}, 0.4, 0.85, 0.945)
+            Draw2DText('[Rechtsklick / Backspace] Modus verlassen', 4, {255, 255, 255}, 0.4, 0.85, 0.945)
 
 
             -- Handle various key presses and actions
