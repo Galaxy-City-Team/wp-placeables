@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Framework = 'esx' -- supports 'qb' or 'esx'
-Config.Notify = 'ox' -- supports 'qb', 'esx', 'ox' (if using ox enable @ox_lib/init.lua in the manifest)
+Config.Notify = 'esx' -- supports 'qb', 'esx', 'ox' (if using ox enable @ox_lib/init.lua in the manifest)
 Config.Target = 'qb' -- only 'qb' for now
 
 Config.ItemPlacementModeRadius = 10.0 -- Object can only be placed within this radius of the player
@@ -146,104 +146,104 @@ local printerCustomTargetOptions = {
 ---@param shouldUseItemNameState: Only need to set this to true if you want to have multiple items use the same prop model. Otherwise you do not need to define it
 Config.PlaceableProps = {
     -- Constructions props
-    {item = "roadworkbarrier", label = "Road Work Ahead Barrier", model = "prop_barrier_work04a", isFrozen = true},
-    {item = "roadclosedbarrier", label = "Road Closed Barrier", model = "xm3_prop_xm3_road_barrier_01a", isFrozen = true},
-    {item = "constructionbarrier", label = "Fold-out Barrier", model = "prop_barrier_work01a", isFrozen = false},
-    {item = "constructionbarrier2", label = "Construction Barrier", model = "prop_barrier_work06a", isFrozen = true},
-    {item = "constructionbarrier3", label = "Construction Barrier", model = "prop_mp_barrier_02b", isFrozen = true},
-    {item = "roadconebig", label = "Big Road Cone", model = "prop_barrier_wat_03a", isFrozen = false},
-    {item = "roadcone", label = "Road Cone", model = "prop_roadcone01a", isFrozen = false},
-    {item = "roadpole", label = "Road Pole", model = "prop_roadpole_01a", isFrozen = false},
-    {item = "worklight", label = "Work Light", model = "prop_worklight_01a", isFrozen = false},
-    {item = "worklight2", label = "Work Light", model = "prop_worklight_04b", isFrozen = false},
-    {item = "worklight3", label = "Work Light", model = "prop_worklight_02a", isFrozen = false},
-    {item = "constructiongenerator", label = "Construction Generator", model = "prop_generator_03b", isFrozen = true},
-    {item = "trafficdevice", label = "Traffic Device (Left)", model = "prop_trafficdiv_01", isFrozen = true},
-    {item = "trafficdevice2", label = "Traffic Device (Right)", model = "prop_trafficdiv_02", isFrozen = true},
-    {item = "meshfence1", label = "Mesh Fence (Small)", model = "prop_fnc_omesh_01a", isFrozen = true},
-    {item = "meshfence2", label = "Mesh Fence (Medium)", model = "prop_fnc_omesh_02a", isFrozen = true},
-    {item = "meshfence3", label = "Mesh Fence (Large)", model = "prop_fnc_omesh_03a", isFrozen = true},
-    {item = "waterbarrel", label = "Water Barrel", model = "prop_barrier_wat_04a", isFrozen = false},
+    {item = "roadworkbarrier", label = "Strasse Gespeert Barriere", model = "prop_barrier_work04a", isFrozen = true},
+    {item = "roadclosedbarrier", label = "Strasse Geschlossen Barriere", model = "xm3_prop_xm3_road_barrier_01a", isFrozen = true},
+    {item = "constructionbarrier", label = "Ausklappbare Barrieren", model = "prop_barrier_work01a", isFrozen = false},
+    {item = "constructionbarrier2", label = "Konstruktions Barrier", model = "prop_barrier_work06a", isFrozen = true},
+    {item = "constructionbarrier3", label = "Konstruktions Barrier", model = "prop_mp_barrier_02b", isFrozen = true},
+    {item = "roadconebig", label = "Grosser Strassenkegel", model = "prop_barrier_wat_03a", isFrozen = false},
+    {item = "roadcone", label = "Strassenkegel", model = "prop_roadcone01a", isFrozen = false},
+    {item = "roadpole", label = "Straßenmast", model = "prop_roadpole_01a", isFrozen = false},
+    {item = "worklight", label = "Arbeitslampe", model = "prop_worklight_01a", isFrozen = false},
+    {item = "worklight2", label = "Arbeitslampe", model = "prop_worklight_04b", isFrozen = false},
+    {item = "worklight3", label = "Arbeitslampe", model = "prop_worklight_02a", isFrozen = false},
+    {item = "constructiongenerator", label = "Baugenerator", model = "prop_generator_03b", isFrozen = true},
+    {item = "trafficdevice", label = "Verkehrsgerät (Links)", model = "prop_trafficdiv_01", isFrozen = true},
+    {item = "trafficdevice2", label = "Verkehrsgerät (Rechts)", model = "prop_trafficdiv_02", isFrozen = true},
+    {item = "meshfence1", label = "Maschendrahtzaun (Klein)", model = "prop_fnc_omesh_01a", isFrozen = true},
+    {item = "meshfence2", label = "Maschendrahtzaun (Mittel)", model = "prop_fnc_omesh_02a", isFrozen = true},
+    {item = "meshfence3", label = "Maschendrahtzaun (Gross)", model = "prop_fnc_omesh_03a", isFrozen = true},
+    {item = "waterbarrel", label = "Wasserfass", model = "prop_barrier_wat_04a", isFrozen = false},
 
     -- Camping + Hobo props
-    {item = "tent", label = "Old Tent", model = "prop_skid_tent_03", isFrozen = true},
-    {item = "tent2", label = "Tent", model = "prop_skid_tent_01", isFrozen = true},
-    {item = "tent3", label = "Large Tent", model = "ba_prop_battle_tent_02", isFrozen = true},
-    {item = "hobostove", label = "Hobo Stove", model = "prop_hobo_stove_01", isFrozen = true},
-    {item = "campfire", label = "Campfire", model = "prop_beach_fire", isFrozen = true},
-    {item = "hobomattress", label = "Hobo Mattress", model = "prop_rub_matress_01", isFrozen = true},
-    {item = "hoboshelter", label = "Hobo Shelter", model = "prop_homeles_shelter_01", isFrozen = true},
-    {item = "sleepingbag", label = "Sleeping Bag", model = "prop_skid_sleepbag_1", isFrozen = true},
-    {item = "canopy1", label = "Canopy (Green)", model = "prop_gazebo_01", isFrozen = true},
-    {item = "canopy2", label = "Canopy (Blue)", model = "prop_gazebo_02", isFrozen = true},
-    {item = "canopy3", label = "Canopy (White)", model = "prop_gazebo_03", isFrozen = true},
-    {item = "cot", label = "Cot", model = "gr_prop_gr_campbed_01", isFrozen = true},
+    {item = "tent", label = "Altes Zelt", model = "prop_skid_tent_03", isFrozen = true},
+    {item = "tent2", label = "Zelt", model = "prop_skid_tent_01", isFrozen = true},
+    {item = "tent3", label = "Grosses Zelt", model = "ba_prop_battle_tent_02", isFrozen = true},
+    {item = "hobostove", label = "Hobo-Herd", model = "prop_hobo_stove_01", isFrozen = true},
+    {item = "campfire", label = "Lagerfeuer", model = "prop_beach_fire", isFrozen = true},
+    {item = "hobomattress", label = "Hobo-Matratze", model = "prop_rub_matress_01", isFrozen = true},
+    {item = "hoboshelter", label = "Hobo-Unterkunft", model = "prop_homeles_shelter_01", isFrozen = true},
+    {item = "sleepingbag", label = "Schlafsack", model = "prop_skid_sleepbag_1", isFrozen = true},
+    {item = "canopy1", label = "Überdachung (Grün)", model = "prop_gazebo_01", isFrozen = true},
+    {item = "canopy2", label = "Überdachung (Blau)", model = "prop_gazebo_02", isFrozen = true},
+    {item = "canopy3", label = "Überdachung (Weiss)", model = "prop_gazebo_03", isFrozen = true},
+    {item = "cot", label = "Kinderbett", model = "gr_prop_gr_campbed_01", isFrozen = true},
 
     -- Triathlon props
-    {item = "tristarttable", label = "Triathlon Start Table", model = "prop_tri_table_01", isFrozen = true},
-    {item = "tristartbanner", label = "Triathlon Start Banner", model = "prop_tri_start_banner", isFrozen = true},
-    {item = "trifinishbanner", label = "Triathlon Finish Banner", model = "prop_tri_finish_banner", isFrozen = true},
+    {item = "tristarttable", label = "Triathlon-Starttabelle", model = "prop_tri_table_01", isFrozen = true},
+    {item = "tristartbanner", label = "Triathlon-Startbanner", model = "prop_tri_start_banner", isFrozen = true},
+    {item = "trifinishbanner", label = "Triathlon-Zielbanner", model = "prop_tri_finish_banner", isFrozen = true},
 
     -- Table props
-    {item = "plastictable", label = "Plastic Table", model = "prop_ven_market_table1", isFrozen = true},
-    {item = "plastictable2", label = "Plastic Table", model = "prop_table_03", isFrozen = true},
-    {item = "woodtable", label = "Small Wood Table", model = "prop_rub_table_01", isFrozen = true},
-    {item = "woodtable2", label = "Wood Table", model = "prop_rub_table_02", isFrozen = true},
+    {item = "plastictable", label = "Plastiktisch", model = "prop_ven_market_table1", isFrozen = true},
+    {item = "plastictable2", label = "Plastiktisch", model = "prop_table_03", isFrozen = true},
+    {item = "woodtable", label = "Kleiner Holztisch", model = "prop_rub_table_01", isFrozen = true},
+    {item = "woodtable2", label = "Holztisch", model = "prop_rub_table_02", isFrozen = true},
 
     -- Beach props
-    {item = "beachtowel", label = "Beach Towel", model = "prop_cs_beachtowel_01", isFrozen = true},
-    {item = "beachumbrella", label = "Beach Umbrella", model = "prop_parasol_04b", isFrozen = true},
-    {item = "beachumbrella2", label = "Beach Umbrella", model = "prop_beach_parasol_02", isFrozen = true},
-    {item = "beachumbrella3", label = "Beach Umbrella", model = "prop_beach_parasol_06", isFrozen = true},
-    {item = "beachumbrella4", label = "Beach Umbrella", model = "prop_beach_parasol_10", isFrozen = true},
-    {item = "beachball", label = "Beach Ball", model = "prop_beachball_02", isFrozen = false},
+    {item = "beachtowel", label = "Badetuch", model = "prop_cs_beachtowel_01", isFrozen = true},
+    {item = "beachumbrella", label = "Sonnenschirm", model = "prop_parasol_04b", isFrozen = true},
+    {item = "beachumbrella2", label = "Sonnenschirm", model = "prop_beach_parasol_02", isFrozen = true},
+    {item = "beachumbrella3", label = "Sonnenschirm", model = "prop_beach_parasol_06", isFrozen = true},
+    {item = "beachumbrella4", label = "Sonnenschirm", model = "prop_beach_parasol_10", isFrozen = true},
+    {item = "beachball", label = "Sonnenschirm", model = "prop_beachball_02", isFrozen = false},
 
     -- Ramp props
-    {item = "ramp1", label = "Wood Ramp (Gradual)", model = "prop_mp_ramp_01", isFrozen = true},
-    {item = "ramp2", label = "Wood Ramp (Moderate)", model = "prop_mp_ramp_02", isFrozen = true},
-    {item = "ramp3", label = "Wood Ramp (Steep)", model = "prop_mp_ramp_03", isFrozen = true},
-    {item = "ramp4", label = "Metal Ramp (Large)", model = "xs_prop_arena_pipe_ramp_01a", isFrozen = true},
-    {item = "ramp5", label = "Metal Trailer Ramp", model = "xs_prop_x18_flatbed_ramp", isFrozen = true},
-    {item = "skateramp", label = "Skate Ramp", model = "prop_skate_flatramp", isFrozen = true},
-    {item = "stuntramp1", label = "Stunt Ramp S", model = "stt_prop_ramp_adj_flip_s", isFrozen = true},
-    {item = "stuntramp2", label = "Stunt Ramp M", model = "stt_prop_ramp_adj_flip_m", isFrozen = true},
-    {item = "stuntramp3", label = "Stunt Ramp L", model = "stt_prop_ramp_jump_l", isFrozen = true},
-    {item = "stuntramp4", label = "Stunt Ramp XL", model = "stt_prop_ramp_jump_xl", isFrozen = true},
-    {item = "stuntramp5", label = "Stunt Ramp XXL", model = "stt_prop_ramp_jump_xxl", isFrozen = true},
-    {item = "stuntloop1", label = "Stunt Half Loop", model = "stt_prop_ramp_adj_hloop", isFrozen = true},
-    {item = "stuntloop2", label = "Stunt Loop", model = "stt_prop_ramp_adj_loop", isFrozen = true},
-    {item = "stuntloop3", label = "Stunt Spiral", model = "stt_prop_ramp_spiral_s", isFrozen = true},
+    {item = "ramp1", label = "Holzrampe (Gradual)", model = "prop_mp_ramp_01", isFrozen = true},
+    {item = "ramp2", label = "Holzrampe (Moderate)", model = "prop_mp_ramp_02", isFrozen = true},
+    {item = "ramp3", label = "Holzrampe (Steil)", model = "prop_mp_ramp_03", isFrozen = true},
+    {item = "ramp4", label = "Holzrampe (Gross)", model = "xs_prop_arena_pipe_ramp_01a", isFrozen = true},
+    {item = "ramp5", label = "Anhängerrampe aus Metall", model = "xs_prop_x18_flatbed_ramp", isFrozen = true},
+    {item = "skateramp", label = "Skate-Rampe", model = "prop_skate_flatramp", isFrozen = true},
+    {item = "stuntramp1", label = "Stunt-Rampe S", model = "stt_prop_ramp_adj_flip_s", isFrozen = true},
+    {item = "stuntramp2", label = "Stunt-Rampe M", model = "stt_prop_ramp_adj_flip_m", isFrozen = true},
+    {item = "stuntramp3", label = "Stunt-Rampe L", model = "stt_prop_ramp_jump_l", isFrozen = true},
+    {item = "stuntramp4", label = "Stunt-Rampe XL", model = "stt_prop_ramp_jump_xl", isFrozen = true},
+    {item = "stuntramp5", label = "Stunt-Rampe XXL", model = "stt_prop_ramp_jump_xxl", isFrozen = true},
+    {item = "stuntloop1", label = "Stunt-Halblooping", model = "stt_prop_ramp_adj_hloop", isFrozen = true},
+    {item = "stuntloop2", label = "Stunt-Looping", model = "stt_prop_ramp_adj_loop", isFrozen = true},
+    {item = "stuntloop3", label = "Stunt-Spirale", model = "stt_prop_ramp_spiral_s", isFrozen = true},
 
     -- EMS/Hospital props
-    {item = "medbag", label = "Medical Bag", model = "xm_prop_x17_bag_med_01a", isFrozen = true},
-    {item = "examlight", label = "Exam Light", model = "v_med_examlight", isFrozen = true},
-    {item = "hazardbin", label = "Hazard Bin", model = "v_med_medwastebin", isFrozen = true},
-    {item = "microscope", label = "Microscope", model = "v_med_microscope", isFrozen = true},
-    {item = "oscillator", label = "Oscillator", model = "v_med_oscillator3", isFrozen = true},
-    {item = "medmachine", label = "Medical Machine", model = "v_med_oscillator4", isFrozen = true},
-    {item = "bodybag", label = "Body Bag", model = "xm_prop_body_bag", isFrozen = true},
+    {item = "medbag", label = "Medizinische Tasche", model = "xm_prop_x17_bag_med_01a", isFrozen = true},
+    {item = "examlight", label = "Prüfungslicht", model = "v_med_examlight", isFrozen = true},
+    {item = "hazardbin", label = "Gefahrenbehälter", model = "v_med_medwastebin", isFrozen = true},
+    {item = "microscope", label = "Mikroscop", model = "v_med_microscope", isFrozen = true},
+    {item = "oscillator", label = "Oszillator", model = "v_med_oscillator3", isFrozen = true},
+    {item = "medmachine", label = "Medizinische Maschine", model = "v_med_oscillator4", isFrozen = true},
+    {item = "bodybag", label = "Leichensack", model = "xm_prop_body_bag", isFrozen = true},
 
     -- Chairs
-    {item = "camp_chair_green", label = "Camp Chair (Green)", model = "prop_skid_chair_01", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
-    {item = "camp_chair_blue", label = "Camp Chair (Blue)", model = "prop_skid_chair_02", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
-    {item = "camp_chair_plaid", label = "Camp Chair (Plaid)", model = "prop_skid_chair_03", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
-    {item = "plastic_chair", label = "Plastic Chair", model = "prop_chair_08", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
-    {item = "folding_chair", label = "Folding Chair", model = "xm3_prop_xm3_folding_chair_01a", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
+    {item = "camp_chair_green", label = "Campingstuhl (Grün)", model = "prop_skid_chair_01", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
+    {item = "camp_chair_blue", label = "Campingstuhl (Blau)", model = "prop_skid_chair_02", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
+    {item = "camp_chair_plaid", label = "Campingstuhl (Plaid)", model = "prop_skid_chair_03", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
+    {item = "plastic_chair", label = "Plastik Stuhl", model = "prop_chair_08", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
+    {item = "folding_chair", label = "Klappstuhl", model = "xm3_prop_xm3_folding_chair_01a", isFrozen = true, customTargetOptions = chairCustomTargetOptions},
 
     -- Misc props
-    {item = "greenscreen", label = "Green Screen", model = "prop_ld_greenscreen_01", isFrozen = true},
-    {item = "ropebarrier", label = "Rope Barrier", model = "vw_prop_vw_barrier_rope_01a", isFrozen = false},
-    {item = "largesoccerball", label = "Large Soccer Ball", model = "stt_prop_stunt_soccer_ball", isFrozen = false},
-    {item = "soccerball", label = "Soccer Ball", model = "p_ld_soc_ball_01", isFrozen = false},
-    {item = "stepladder", label = "Step Ladder", model = "v_med_cor_stepladder", isFrozen = true},
-    {item = "sexdoll", label = "Sex Doll", model = "prop_defilied_ragdoll_01", isFrozen = true},
+    {item = "greenscreen", label = "Greenscreen", model = "prop_ld_greenscreen_01", isFrozen = true},
+    {item = "ropebarrier", label = "Seilbarriere", model = "vw_prop_vw_barrier_rope_01a", isFrozen = false},
+    {item = "largesoccerball", label = "Grosser Fussball", model = "stt_prop_stunt_soccer_ball", isFrozen = false},
+    {item = "soccerball", label = "Fussball", model = "p_ld_soc_ball_01", isFrozen = false},
+    {item = "stepladder", label = "Trittleiter", model = "v_med_cor_stepladder", isFrozen = true},
+    {item = "sexdoll", label = "Sexpuppe", model = "prop_defilied_ragdoll_01", isFrozen = true},
 
     -- Pushable items
-    {item = "shoppingcart1", label = "Shopping Cart (Empty)", model = "prop_rub_trolley01a", isFrozen = false, customTargetOptions = pushAndSitTargetOptions},
-    {item = "shoppingcart2", label = "Shopping Cart (Full)", model = "prop_skid_trolley_2", isFrozen = false, customTargetOptions = pushTargetOptions},
-    {item = "shoppingcart3", label = "Shopping Cart (Empty)", model = "prop_rub_trolley02a", isFrozen = false, customTargetOptions = pushAndSitTargetOptions},
-    {item = "shoppingcart4", label = "Shopping Cart (Full)", model = "prop_skid_trolley_1", isFrozen = false, customTargetOptions = pushTargetOptions},
-    {item = "wheelbarrow", label = "Wheelbarrow", model = "prop_wheelbarrow01a", isFrozen = false,
+    {item = "shoppingcart1", label = "Schubkarre (Leer)", model = "prop_rub_trolley01a", isFrozen = false, customTargetOptions = pushAndSitTargetOptions},
+    {item = "shoppingcart2", label = "Schubkarre (Voll)", model = "prop_skid_trolley_2", isFrozen = false, customTargetOptions = pushTargetOptions},
+    {item = "shoppingcart3", label = "Schubkarre (Leer)", model = "prop_rub_trolley02a", isFrozen = false, customTargetOptions = pushAndSitTargetOptions},
+    {item = "shoppingcart4", label = "Warenkorb (Voll)", model = "prop_skid_trolley_1", isFrozen = false, customTargetOptions = pushTargetOptions},
+    {item = "wheelbarrow", label = "Schubkarre", model = "prop_wheelbarrow01a", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushAndSitTargetOptions, {
                 offset = {x =  -0.4, y = -1.8, z = -0.6},
@@ -258,7 +258,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "warehousetrolly1", label = "Warehouse Trolly (Empty)", model = "hei_prop_hei_warehousetrolly_02", isFrozen = false,
+    {item = "warehousetrolly1", label = "Lagerwagen (Leer)", model = "hei_prop_hei_warehousetrolly_02", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushAndSitTargetOptions, {
                 offset = {x =  -0.4, y = -1.5, z = -0.9},
@@ -273,7 +273,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "warehousetrolly2", label = "Warehouse Trolly (Full)", model = "prop_flattruck_01d", isFrozen = false,
+    {item = "warehousetrolly2", label = "Lagerwagen (voll)", model = "prop_flattruck_01d", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.5, z = -0.9},
@@ -283,7 +283,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "roomtrolly", label = "Room Trolly", model = "ch_prop_ch_room_trolly_01a", isFrozen = false,
+    {item = "roomtrolly", label = "Zimmerwagen", model = "ch_prop_ch_room_trolly_01a", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.75, z = -0.8},
@@ -293,7 +293,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "janitorcart1", label = "Janitor Cart", model = "prop_cleaning_trolly", isFrozen = false,
+    {item = "janitorcart1", label = "Hausmeisterwagen", model = "prop_cleaning_trolly", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.3, y = -1.6, z = -0.9},
@@ -303,7 +303,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "janitorcart2", label = "Janitor Cart", model = "ch_prop_ch_trolly_01a", isFrozen = false,
+    {item = "janitorcart2", label = "Hausmeisterwagen", model = "ch_prop_ch_trolly_01a", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.3, y = -1.75, z = -0.3},
@@ -313,7 +313,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "mopbucket", label = "Mop Bucket", model = "prop_tool_mopbucket", isFrozen = false,
+    {item = "mopbucket", label = "Putzeimer", model = "prop_tool_mopbucket", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.3, y = -1.9, z = -0.8},
@@ -323,7 +323,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "metalcart", label = "Metal Cart", model = "prop_gold_trolly", isFrozen = false,
+    {item = "metalcart", label = "Metallwagen", model = "prop_gold_trolly", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.75, z = -0.35},
@@ -333,7 +333,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "teacart", label = "Tea Cart", model = "prop_tea_trolly", isFrozen = false,
+    {item = "teacart", label = "Teewagen", model = "prop_tea_trolly", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.75, z = -0.4},
@@ -343,7 +343,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "drinkcart", label = "Drink Cart", model = "h4_int_04_drink_cart", isFrozen = false,
+    {item = "drinkcart", label = "Getränkewagen", model = "h4_int_04_drink_cart", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.75, z = -0.4},
@@ -353,7 +353,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "handtruck1", label = "Hand Truck", model = "prop_sacktruck_02a", isFrozen = false,
+    {item = "handtruck1", label = "Sackkarre", model = "prop_sacktruck_02a", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.4, z = -0.8},
@@ -363,7 +363,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "handtruck2", label = "Hand Truck (Boxes)", model = "prop_sacktruck_02b", isFrozen = false,
+    {item = "handtruck2", label = "Sackkarre (Kisten)", model = "prop_sacktruck_02b", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.4, y = -1.4, z = -0.75},
@@ -373,7 +373,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "trashbin", label = "Trash Bin", model = "prop_cs_bin_01_skinned", isFrozen = false,
+    {item = "trashbin", label = "Mülleimer", model = "prop_cs_bin_01_skinned", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushAndSitTargetOptions, {
                 offset = {x =  -0.4, y = -1.62, z = -0.8},
@@ -388,7 +388,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "lawnmower", label = "Lawn Mower", model = "prop_lawnmower_01", isFrozen = false,
+    {item = "lawnmower", label = "Rasenmäher", model = "prop_lawnmower_01", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.43, y = -1.6, z = -0.83},
@@ -398,7 +398,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "toolchest", label = "Tool Chest", model = "prop_toolchest_03", isFrozen = false,
+    {item = "toolchest", label = "Werkzeugkasten", model = "prop_toolchest_03", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.35, y = -1.95, z = -0.83},
@@ -408,7 +408,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "carjack", label = "Car Jack", model = "prop_carjack", isFrozen = false,
+    {item = "carjack", label = "Wagenheber", model = "prop_carjack", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.35, y = -1.75, z = -0.83},
@@ -418,7 +418,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "hospitalbedtable", label = "Hospital Bedside Table", model = "v_med_bedtable", isFrozen = false,
+    {item = "hospitalbedtable", label = "Krankenhaus-Nachttisch", model = "v_med_bedtable", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.35, y = -1.7, z = -0.35},
@@ -428,7 +428,7 @@ Config.PlaceableProps = {
             }
         )
     },
-    {item = "medtable", label = "Medical Table", model = "v_med_trolley2", isFrozen = false,
+    {item = "medtable", label = "Medizinischer Tisch", model = "v_med_trolley2", isFrozen = false,
         customTargetOptions = setCustomTargetOptions(
             pushTargetOptions, {
                 offset = {x =  -0.35, y = -1.75, z = -0.83},
@@ -449,11 +449,11 @@ Config.PlaceableProps = {
 
     -- Printers
     -- Uncomment this line if you are using wp-printer
-     {item = "printer", label = "Printer", model = "prop_printer_01", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-     {item = "printer2", label = "Printer", model = "prop_printer_02", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-     {item = "printer3", label = "Printer", model = "v_res_printer", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-     {item = "printer4", label = "Printer", model = "v_ret_gc_print", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
-     {item = "photocopier", label = "Photocopier", model = "v_med_cor_photocopy", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer", label = "Drucker", model = "prop_printer_01", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer2", label = "Drucker", model = "prop_printer_02", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer3", label = "Drucker", model = "v_res_printer", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "printer4", label = "Drucker", model = "v_ret_gc_print", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
+     {item = "photocopier", label = "Kopiergerät", model = "v_med_cor_photocopy", isFrozen = true, customTargetOptions = printerCustomTargetOptions},
     
     -- ADD YOUR CUSTOM PROPS HERE
 }
