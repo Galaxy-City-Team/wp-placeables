@@ -60,12 +60,12 @@ local function createLog(itemName, isItemPlaced)
     local player = PlayerId()
     local logMessage = "**" .. GetPlayerName(player) .. "** (".. PlayerData.charinfo.firstname.." "..PlayerData.charinfo.lastname..") | CitizenId: "..PlayerData.citizenid.."\n Item Name: "..itemName
     local color = "red" 
-    local action = "Placed" 
+    local action = "Platziert" 
     if not isItemPlaced then 
         color = "green"
-        action = "Picked Up"
+        action = "Aufnehmen"
     end
-    TriggerServerEvent("qb-log:server:CreateLog", "itemplacement", "Item "..action.." By:", color, logMessage)
+    TriggerServerEvent("qb-log:server:CreateLog", "itemplacement", "Gegenstand "..action.." Von:", color, logMessage)
 end
 
 -- This handles placing the actual item that is network synced
@@ -78,7 +78,7 @@ local function placeItem(item, coords, heading, shouldSnapToGround)
     -- Cancel any active animation
     ClearPedTasks(ped)
 
-    Progressbar("place_item", "Placing "..item.label, 750, false, true, {
+    Progressbar("place_item", "Platzieren "..item.label, 750, false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,
@@ -124,7 +124,7 @@ local function placeItem(item, coords, heading, shouldSnapToGround)
         SetModelAsNoLongerNeeded(itemModel)
     end, function() -- Cancel
         StopAnimTask(ped, animationDict, animation, 1.0)
-        Notify("Canceled..", "error")
+        Notify("Abgebrochen..", "error")
 	end)
 end
 
@@ -134,7 +134,7 @@ end
 local function startItemPlacementMode(item)
     -- This is to prevent entering place mode multiple times if its already active
     if isInPlaceItemMode then
-        Notify('Already placing an item', 'error', 5000)
+        Notify('Du bist bereits dran, ein Gegenstand zu platzieren', 'error', 5000)
         return
     end
 
@@ -158,8 +158,8 @@ local function startItemPlacementMode(item)
             SetEntityCoords(obj, coords.x, coords.y, coords.z + zOffset)
 
             -- Display the controls
-            Draw2DText('[E] Place\n[Shift+E] Place on ground\n[Scroll Up/Down] Rotate\n[Shift+Scroll Up/Down] Raise/lower', 4, {255, 255, 255}, 0.4, 0.85, 0.85)
-            Draw2DText('[Right Click / Backspace] Exit place mode', 4, {255, 255, 255}, 0.4, 0.85, 0.945)
+            Draw2DText('[E] Platzieren\n[Shift+E] Auf den Boden platzieren\n[Scroll Up/Down] Rotieren\n[Shift+Scroll Up/Down] Heben/Senken', 4, {255, 255, 255}, 0.4, 0.85, 0.85)
+            Draw2DText('[Right Click / Backspace] Modus verlasse ', 4, {255, 255, 255}, 0.4, 0.85, 0.945)
 
 
             -- Handle various key presses and actions
@@ -241,7 +241,7 @@ local function pickUpItem(itemData)
         -- Cancel any active animation
         ClearPedTasks(ped)
 
-        Progressbar("pickup_item", "Picking up item", 200, false, true, {
+        Progressbar("pickup_item", "Gegenstand aufnehmen", 200, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -278,7 +278,7 @@ local function pickUpItem(itemData)
             createLog(itemName, false)
         end, function() -- Cancel
             StopAnimTask(ped, animationDict, animation, 1.0)
-            Notify("Canceled..", "error")
+            Notify("Abgebrochem..", "error")
         end)
     end
 end
@@ -287,7 +287,7 @@ RegisterNetEvent('wp-placeables:client:placeItem', function(item)
     if not IsPedInAnyVehicle(PlayerPedId(), true) then
         startItemPlacementMode(item)
     else
-        Notify('You cannot place items while in a vehicle', 'error', 5000)
+        Notify('Du kannst keine Gegenstände platzieren, solange du im Auto sitzt', 'error', 5000)
     end
 end)
 
@@ -306,7 +306,7 @@ for _, prop in pairs(Config.PlaceableProps) do
         {
             event = pickUpEvent,
             icon = "fas fa-hand-holding",
-            label = "Pick up",
+            label = "Aufnehmen",
             itemName = prop.item,
             itemModel = prop.model,
         },
